@@ -10,6 +10,7 @@
 		7463058E18BA693200946F80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7463058D18BA693200946F80 /* Foundation.framework */; };
 		7463059118BA693200946F80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7463059018BA693200946F80 /* main.m */; };
 		7463059518BA693200946F80 /* angulate.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7463059418BA693200946F80 /* angulate.1 */; };
+		7463059D18BA6B7900946F80 /* ANGUController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7463059C18BA6B7900946F80 /* ANGUController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		7463059018BA693200946F80 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7463059318BA693200946F80 /* angulate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "angulate-Prefix.pch"; sourceTree = "<group>"; };
 		7463059418BA693200946F80 /* angulate.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = angulate.1; sourceTree = "<group>"; };
+		7463059B18BA6B7900946F80 /* ANGUController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANGUController.h; sourceTree = "<group>"; };
+		7463059C18BA6B7900946F80 /* ANGUController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANGUController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +51,8 @@
 		7463058118BA693100946F80 = {
 			isa = PBXGroup;
 			children = (
+				7463059B18BA6B7900946F80 /* ANGUController.h */,
+				7463059C18BA6B7900946F80 /* ANGUController.m */,
 				7463058F18BA693200946F80 /* angulate */,
 				7463058C18BA693100946F80 /* Frameworks */,
 				7463058B18BA693100946F80 /* Products */,
@@ -139,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7463059D18BA6B7900946F80 /* ANGUController.m in Sources */,
 				7463059118BA693200946F80 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
