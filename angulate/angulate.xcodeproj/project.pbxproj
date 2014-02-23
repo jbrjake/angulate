@@ -11,6 +11,9 @@
 		7463059118BA693200946F80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7463059018BA693200946F80 /* main.m */; };
 		7463059518BA693200946F80 /* angulate.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7463059418BA693200946F80 /* angulate.1 */; };
 		7463059D18BA6B7900946F80 /* ANGUController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7463059C18BA6B7900946F80 /* ANGUController.m */; };
+		746305A018BA6C8200946F80 /* ANGUPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7463059F18BA6C8200946F80 /* ANGUPoint.m */; };
+		746305A218BA6E4500946F80 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 746305A118BA6E4500946F80 /* MapKit.framework */; };
+		746305A418BA723200946F80 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 746305A318BA723200946F80 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +37,10 @@
 		7463059418BA693200946F80 /* angulate.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = angulate.1; sourceTree = "<group>"; };
 		7463059B18BA6B7900946F80 /* ANGUController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANGUController.h; sourceTree = "<group>"; };
 		7463059C18BA6B7900946F80 /* ANGUController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANGUController.m; sourceTree = "<group>"; };
+		7463059E18BA6C8200946F80 /* ANGUPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANGUPoint.h; sourceTree = "<group>"; };
+		7463059F18BA6C8200946F80 /* ANGUPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANGUPoint.m; sourceTree = "<group>"; };
+		746305A118BA6E4500946F80 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		746305A318BA723200946F80 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				746305A418BA723200946F80 /* CoreLocation.framework in Frameworks */,
+				746305A218BA6E4500946F80 /* MapKit.framework in Frameworks */,
 				7463058E18BA693200946F80 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +60,8 @@
 		7463058118BA693100946F80 = {
 			isa = PBXGroup;
 			children = (
+				7463059E18BA6C8200946F80 /* ANGUPoint.h */,
+				7463059F18BA6C8200946F80 /* ANGUPoint.m */,
 				7463059B18BA6B7900946F80 /* ANGUController.h */,
 				7463059C18BA6B7900946F80 /* ANGUController.m */,
 				7463058F18BA693200946F80 /* angulate */,
@@ -70,6 +81,8 @@
 		7463058C18BA693100946F80 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				746305A318BA723200946F80 /* CoreLocation.framework */,
+				746305A118BA6E4500946F80 /* MapKit.framework */,
 				7463058D18BA693200946F80 /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -144,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				746305A018BA6C8200946F80 /* ANGUPoint.m in Sources */,
 				7463059D18BA6B7900946F80 /* ANGUController.m in Sources */,
 				7463059118BA693200946F80 /* main.m in Sources */,
 			);
