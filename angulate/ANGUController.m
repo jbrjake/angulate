@@ -7,6 +7,7 @@
 //
 
 #import "ANGUController.h"
+#import "ANGUPoint.h"
 
 @implementation ANGUController
 
@@ -14,8 +15,12 @@
 {
     self = [super init];
     if (self) {
-        _points = [[NSMutableArray alloc] initWithArray:points];
-        
+        _points = [[NSMutableArray alloc] init];
+        for (NSString * address in points) {
+            ANGUPoint * point = [[ANGUPoint alloc] initWithAddress:address];
+            [self.points addObject:point];
+        }
+        NSLog(@"Points: %@", self.points);
     }
     return self;
 }
