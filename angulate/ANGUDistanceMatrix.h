@@ -10,4 +10,6 @@
 
 @interface ANGUDistanceMatrix : NSMutableDictionary
 
+- (id)initWithCoordinates:(NSArray*)coordinates;
+
 @end
