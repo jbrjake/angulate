@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ANGUController.h"
 
 int main(int argc, const char * argv[])
 {
@@ -30,6 +31,9 @@ int main(int argc, const char * argv[])
             [points addObject:point];
         }
 #endif
+        ANGUController * anguController = [[ANGUController alloc] initWithPoints:points];
+
+        anguController = nil;
     }
     return 0;
 }
