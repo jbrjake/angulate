@@ -36,9 +36,7 @@
         while (dispatch_semaphore_wait(sema, DISPATCH_TIME_NOW)) {
             [[NSRunLoop currentRunLoop]
              runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0]];
-        }
-        
-        NSLog(@"Coords: %f, %f", self.latlong.longitude, self.latlong.latitude);
+        }        
     }
     return self;
 }
