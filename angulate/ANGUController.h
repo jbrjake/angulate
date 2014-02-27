@@ -13,7 +13,6 @@
 @interface ANGUController : NSObject
 
 - (id)initWithPoints:(NSMutableArray*) points;
-- (ANGUPoint*)calculateMidPoint;
 
 @property NSMutableArray * points;
 

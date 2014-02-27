@@ -11,5 +11,6 @@
 @interface ANGUDistanceMatrix : NSMutableDictionary
 
 - (id)initWithCoordinates:(NSArray*)coordinates;
+- (ANGUPoint*)calculateMidPointForPoints:(NSArray*)points;
 
 @end
