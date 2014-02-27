@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ANGUDistanceMatrix : NSMutableDictionary
+@class ANGUPoint;
 
-- (id)initWithCoordinates:(NSArray*)coordinates;
+@interface ANGUDistanceMatrix : NSObject
+
+- (id)initWithPoints:(NSArray*)points;
 - (ANGUPoint*)calculateMidPointForPoints:(NSArray*)points;
+
+@property NSMutableDictionary * matrix;
 
 @end
