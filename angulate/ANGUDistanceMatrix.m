@@ -15,39 +15,46 @@
     self = [super init];
     if (self) {
         _matrix = [[NSMutableDictionary alloc] init];
-        
-        NSMutableString * distanceQuery = [[NSMutableString alloc] init];
-        [distanceQuery appendString:@"https://maps.googleapis.com/maps/api/distancematrix/json?"];
-        [distanceQuery appendString:@"origins="];
-        for (ANGUPoint * point in points) {
-            [distanceQuery appendFormat:@"%@|", point.address];
-        }
-    
-        ANGUPoint * midPoint = [self calculateMidPointForPoints:points];
-        [distanceQuery appendString:@"&destinations="];
-        [distanceQuery appendFormat:@"%f,%f|", midPoint.latlong.latitude, midPoint.latlong.longitude];
-        [distanceQuery appendFormat:@"%f,%f|", midPoint.latlong.latitude-.1, midPoint.latlong.longitude-.1];
-        [distanceQuery appendFormat:@"%f,%f|", midPoint.latlong.latitude-.1, midPoint.latlong.longitude+.1];
-        [distanceQuery appendFormat:@"%f,%f|", midPoint.latlong.latitude+.1, midPoint.latlong.longitude+.1];
-        [distanceQuery appendFormat:@"%f,%f|", midPoint.latlong.latitude+.1, midPoint.latlong.longitude-.1];
-        [distanceQuery appendString:@"&sensor=false"];
-        NSLog(@"Crafted URL: %@", distanceQuery);
-        NSURL * distanceQueryURL = [[NSURL alloc] initWithString:[distanceQuery stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        NSLog(@"Sending query: %@", distanceQueryURL);
-        NSURLRequest * distanceQueryRequest = [NSURLRequest requestWithURL:distanceQueryURL];
-        NSURLResponse * distanceQueryResponse = nil;
-        NSError * error = nil;
-        NSData * response = [NSURLConnection sendSynchronousRequest:distanceQueryRequest returningResponse:&distanceQueryResponse error:&error];
-        
-        NSLog(@"Response: %@", distanceQueryResponse);
-        NSLog(@"Error: %@", error ? error : @"none");
-        id jsonResponse = [NSJSONSerialization JSONObjectWithData:response options:0 error:nil];
-        if ([jsonResponse isKindOfClass:[NSDictionary class]]) {
-            [self.matrix addEntriesFromDictionary:jsonResponse];
-            NSLog(@"%@", self.matrix);
-        }
+        [self.matrix addEntriesFromDictionary:[self matrixForPoints:points]];
+        NSLog(@"%@", self.matrix);
     }
     return self;
+}
+
+- (NSMutableDictionary *) matrixForPoints:(NSArray*)points {
+    NSMutableDictionary * ret = [[NSMutableDictionary alloc] init];
+    
+    NSMutableString * distanceQuery = [[NSMutableString alloc] init];
+    [distanceQuery appendString:@"https://maps.googleapis.com/maps/api/distancematrix/json?"];
+    [distanceQuery appendString:@"origins="];
+    for (ANGUPoint * point in points) {
+        [distanceQuery appendFormat:@"%@|", point.address];
+    }
+    
+    ANGUPoint * midPoint = [self calculateMidPointForPoints:points];
+    [distanceQuery appendString:@"&destinations="];
+    [distanceQuery appendFormat:@"%f,%f|", midPoint.latlong.latitude, midPoint.latlong.longitude];
+    [distanceQuery appendFormat:@"%f,%f|", midPoint.latlong.latitude-.1, midPoint.latlong.longitude-.1];
+    [distanceQuery appendFormat:@"%f,%f|", midPoint.latlong.latitude-.1, midPoint.latlong.longitude+.1];
+    [distanceQuery appendFormat:@"%f,%f|", midPoint.latlong.latitude+.1, midPoint.latlong.longitude+.1];
+    [distanceQuery appendFormat:@"%f,%f|", midPoint.latlong.latitude+.1, midPoint.latlong.longitude-.1];
+    [distanceQuery appendString:@"&sensor=false"];
+    NSLog(@"Crafted URL: %@", distanceQuery);
+    NSURL * distanceQueryURL = [[NSURL alloc] initWithString:[distanceQuery stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSLog(@"Sending query: %@", distanceQueryURL);
+    NSURLRequest * distanceQueryRequest = [NSURLRequest requestWithURL:distanceQueryURL];
+    NSURLResponse * distanceQueryResponse = nil;
+    NSError * error = nil;
+    NSData * response = [NSURLConnection sendSynchronousRequest:distanceQueryRequest returningResponse:&distanceQueryResponse error:&error];
+    
+    NSLog(@"Response: %@", distanceQueryResponse);
+    NSLog(@"Error: %@", error ? error : @"none");
+    id jsonResponse = [NSJSONSerialization JSONObjectWithData:response options:0 error:nil];
+    if ([jsonResponse isKindOfClass:[NSDictionary class]]) {
+        [ret addEntriesFromDictionary:jsonResponse];
+    }
+    
+    return ret;
 }
 
 // http://stackoverflow.com/a/18623672
