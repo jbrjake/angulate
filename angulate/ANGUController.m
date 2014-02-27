@@ -8,6 +8,7 @@
 
 #import "ANGUController.h"
 #import "ANGUPoint.h"
+#import "ANGUDistanceMatrix.h"
 
 @implementation ANGUController
 
@@ -22,6 +23,7 @@
         }
         NSLog(@"Points: %@", self.points);
         
+        ANGUDistanceMatrix * distanceMatrix = [[ANGUDistanceMatrix alloc] initWithPoints:self.points];
     }
     return self;
 }
