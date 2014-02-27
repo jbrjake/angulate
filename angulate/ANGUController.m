@@ -27,7 +27,7 @@
 }
 
 // http://stackoverflow.com/a/18623672
-- (void)calculateMidPoint {
+- (ANGUPoint*)calculateMidPoint {
     double x = 0;
     double y = 0;
     double z = 0;
@@ -57,30 +57,9 @@
     double mid_lon = lon * 180 / M_PI;
     
     NSLog(@"Midpoint is %f, %f", mid_lat, mid_lon);
-    CLLocationCoordinate2D midCoords = CLLocationCoordinate2DMake(mid_lat, mid_lon);
-    // Now find distance from midpoint to each poi
-    for (ANGUPoint * point in self.points) {
-        MKDirectionsRequest * request = [[MKDirectionsRequest alloc] init];
-        MKPlacemark * sourcePlacemark = [[MKPlacemark alloc] initWithCoordinate:midCoords addressDictionary:nil];
-        MKMapItem * sourceItem = [[MKMapItem alloc] initWithPlacemark:sourcePlacemark];
-        MKPlacemark * destPlacemark = [[MKPlacemark alloc] initWithCoordinate:point.latlong addressDictionary:nil];
-        MKMapItem * destItem = [[MKMapItem alloc] initWithPlacemark:destPlacemark];
-        
-        [request setSource:sourceItem];
-        [request setDestination:destItem];
-        MKDirections * direction = [[MKDirections alloc] initWithRequest:request];
-        dispatch_semaphore_t sema = dispatch_semaphore_create(0);
-        [direction calculateETAWithCompletionHandler:^(MKETAResponse *response, NSError *error) {
-            NSLog(@"ETA from midpoint to %@ is %@", point.address, response);
-            dispatch_semaphore_signal(sema);
-        }];
-        while (dispatch_semaphore_wait(sema, DISPATCH_TIME_NOW)) {
-            [[NSRunLoop currentRunLoop]
-             runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0]];
-        }
-
-    }
     
+    ANGUPoint * midPoint = [[ANGUPoint alloc] initWithAddress:[NSString stringWithFormat:@"%f,%f", mid_lat, mid_lon]];
+    return midPoint;
 }
 
 @end

@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class ANGUPoint;
+
 @interface ANGUController : NSObject
 
 - (id)initWithPoints:(NSMutableArray*) points;
-- (void)calculateMidPoint;
+- (ANGUPoint*)calculateMidPoint;
 
 @property NSMutableArray * points;
 
