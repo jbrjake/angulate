@@ -11,7 +11,7 @@
 
 @implementation ANGUController
 
-- (id)initWithPoints:(NSMutableArray*) points;
+- (id)initWithPoints:(NSMutableArray*)points;
 {
     self = [super init];
     if (self) {
