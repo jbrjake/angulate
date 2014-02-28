@@ -12,6 +12,7 @@
 @interface ANGUPoint : NSObject
 
 - (id)initWithAddress:(NSString*)address;
+- (id)initWithLat:(CLLocationDegrees)lat andLon:(CLLocationDegrees)lon;
 
 @property CLLocationCoordinate2D latlong;
 @property NSString * address;

@@ -15,6 +15,7 @@
 		746305A218BA6E4500946F80 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 746305A118BA6E4500946F80 /* MapKit.framework */; };
 		746305A418BA723200946F80 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 746305A318BA723200946F80 /* CoreLocation.framework */; };
 		746305A718BD968000946F80 /* ANGUDistanceMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 746305A618BD968000946F80 /* ANGUDistanceMatrix.m */; };
+		746305A918BF0DA400946F80 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 746305A818BF0DA400946F80 /* AddressBook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +45,7 @@
 		746305A318BA723200946F80 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		746305A518BD968000946F80 /* ANGUDistanceMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANGUDistanceMatrix.h; sourceTree = "<group>"; };
 		746305A618BD968000946F80 /* ANGUDistanceMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANGUDistanceMatrix.m; sourceTree = "<group>"; };
+		746305A818BF0DA400946F80 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				746305A918BF0DA400946F80 /* AddressBook.framework in Frameworks */,
 				746305A418BA723200946F80 /* CoreLocation.framework in Frameworks */,
 				746305A218BA6E4500946F80 /* MapKit.framework in Frameworks */,
 				7463058E18BA693200946F80 /* Foundation.framework in Frameworks */,
@@ -86,6 +89,7 @@
 		7463058C18BA693100946F80 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				746305A818BF0DA400946F80 /* AddressBook.framework */,
 				746305A318BA723200946F80 /* CoreLocation.framework */,
 				746305A118BA6E4500946F80 /* MapKit.framework */,
 				7463058D18BA693200946F80 /* Foundation.framework */,
